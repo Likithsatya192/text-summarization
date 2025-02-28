@@ -10,5 +10,4 @@ pytube
 pypdf
 pymupdf
 streamlit
-langchain-yt-dlp
 transformers
