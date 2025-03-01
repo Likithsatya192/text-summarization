@@ -53,7 +53,7 @@ if api_key:
                                                  headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"})
                         docs = loader.load()
 
-                        chain = load_summarize_chain(llm, chain_type="refine")
+                        chain = load_summarize_chain(llm, chain_type="map_reduce", map_prompt=map_prompt_template, combine_prompt=final_prompt_template, verbose=False)
                         output_summary = chain.run(docs)
 
                         st.success(output_summary)
